@@ -12,9 +12,9 @@ on:
     branches:
       - main  # main
       - "dev-*" # dev-new   dev-new-branch   it does not support slashes
-      - feat/** # feat/new   feat/new/button
+      - "feat/**" # feat/new   feat/new/button
     paths-ignore:
-      - "./github/workflows/**"
+      - ".github/workflows/*"
 jobs:
   deploy:
     runs-on: ubuntu-latest
