@@ -3,7 +3,18 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - main
+      - "dev-*"
+      - "feat/**"
   workflow_dispatch:
+  push:
+    branches:
+      - main  # main
+      - "dev-*" # dev-new   dev-new-branch   it does not support slashes
+      - feat/** # feat/new   feat/new/button
+    paths-ignore:
+      - "./github/workflows/**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
